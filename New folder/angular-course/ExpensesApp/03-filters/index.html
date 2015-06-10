@@ -1,0 +1,35 @@
+<html ng-app="expensesApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">    
+    <title>Simple Expenses Tracker</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body ng-controller="HomeViewController">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <span class="navbar-brand"><img src="img/logo.png" class="brand" height="20" /> {{appTitle}}</span>
+        </div>
+      </div>
+    </nav>
+    <div class="container" ng-controller="ExpensesViewController">
+      <div class="row">
+        LIST OF ALL FILTERS: <a href="https://docs.angularjs.org/api/ng/filter">https://docs.angularjs.org/api/ng/filter</a>
+        <div class="col-xs-12">
+
+          <ul class="list-group">
+            <li class="list-group-item text-center" ng-repeat="expense in expenses">
+              <span class="pull-left">${{expense.amount | number:2}}</span>{{expense.description | uppercase}}
+            </li>
+          </ul>   
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
